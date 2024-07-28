@@ -113,7 +113,7 @@ configurations {
 dependencies {
     implementation "net.neoforged:neoforge:${neo_version}"
     implementation "com.blamejared.crafttweaker:CraftTweaker-neoforge-${minecraft_version}:${crafttweaker_version}"
-    compileOnly "appeng:appliedenergistics2-neoforge:${ae2_version}:api"
+    compileOnly "appeng:appliedenergistics2-neoforge:${ae2_version}"
     localRuntime "appeng:appliedenergistics2-neoforge:${ae2_version}"
     //compileOnly "novamachina.exnihilosequentia:exnihilosequentia:${ex_nihilo_version}"
     //localRuntime "novamachina.exnihilosequentia:exnihilosequentia:${ex_nihilo_version}"
