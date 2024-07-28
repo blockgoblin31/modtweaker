@@ -19,8 +19,8 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 @ZenRegister
-@Document("mods/enderio/recipe/SagMill")
-@ZenCodeType.Name("mods.enderio.managers.SagMillRecipeManager")
+@Document("mods/modtweaker/enderio/recipe/SagMill")
+@ZenCodeType.Name("mods.modtweaker.enderio.managers.SagMillRecipeManager")
 public class SagMillRecipeManager implements IRecipeManager<SagMillingRecipe> {
 
     @Override

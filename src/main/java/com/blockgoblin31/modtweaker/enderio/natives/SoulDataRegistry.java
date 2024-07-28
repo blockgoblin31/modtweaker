@@ -15,14 +15,6 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import org.openzen.zencode.java.ZenCodeType;
 
-@ZenRegister
-@Document("mods/enderio/natives/SoulData")
-@ZenCodeType.Name("mods.enderio.SoulData")
 public class SoulDataRegistry{
-
-    @ZenCodeType.Method
-    public static void registerCodec(String name, MapData types) {
-
-    }
 }
 */

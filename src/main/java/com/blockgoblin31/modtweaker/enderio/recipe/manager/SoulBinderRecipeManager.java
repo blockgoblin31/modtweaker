@@ -22,8 +22,8 @@ import org.openzen.zencode.java.ZenCodeType;
 import net.minecraft.world.entity.MobCategory;
 
 @ZenRegister
-@Document("mods/enderio/recipes/SoulBinder")
-@ZenCodeType.Name("mods.enderio.recipe.manager.SoulBinderRecipeManager")
+@Document("mods/modtweaker/enderio/recipes/SoulBinder")
+@ZenCodeType.Name("mods.modtweaker.enderio.recipe.manager.SoulBinderRecipeManager")
 public class SoulBinderRecipeManager implements IRecipeManager<SoulBindingRecipe> {
     */
     /**

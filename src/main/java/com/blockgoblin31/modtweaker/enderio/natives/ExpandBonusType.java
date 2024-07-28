@@ -10,7 +10,7 @@ import org.openzen.zencode.java.ZenCodeType;
 import java.util.Locale;
 
 @ZenRegister
-@NativeTypeRegistration(value = SagMillingRecipe.BonusType.class, zenCodeName = "mods.enderio.BonusType")
+@NativeTypeRegistration(value = SagMillingRecipe.BonusType.class, zenCodeName = "mods.modtweaker.enderio.BonusType")
 @Document("mods/modtweaker/enderio/natives/BonusType")
 @BracketEnum("enderio:bonus_type")
 public class ExpandBonusType {

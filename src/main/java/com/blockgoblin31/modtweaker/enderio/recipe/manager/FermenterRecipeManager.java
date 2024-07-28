@@ -21,8 +21,8 @@ import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 import org.openzen.zencode.java.ZenCodeType;
 
 @ZenRegister
-@Document("mods/enderio/recipe/Vat")
-@ZenCodeType.Name("mods.enderio.recipe.manager.FermenterRecipeManager")
+@Document("mods/modtweaker/enderio/recipe/Vat")
+@ZenCodeType.Name("mods.modtweaker.enderio.recipe.manager.FermenterRecipeManager")
 public class FermenterRecipeManager implements IRecipeManager<FermentingRecipe> {
     @Override
     public RecipeType<FermentingRecipe> getRecipeType() {
