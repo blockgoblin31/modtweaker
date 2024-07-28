@@ -85,6 +85,34 @@ description='''${mod_description}'''
     ordering="NONE"
     side="BOTH"
 
+[[dependencies.${mod_id}]]
+    modId="crafttweaker"
+    type="required"
+    versionRange="${crafttweaker_version_range}"
+    ordering="AFTER"
+    side="BOTH"
+
+#[[dependencies.${mod_id}]]
+#    modId="ex_nihilo"
+#    type="optional"
+#    versionRange="${ex_nihilo_version_range}"
+#    ordering="NONE"
+#    side="SERVER"
+
+[[dependencies.${mod_id}]]
+    modId="ae2"
+    type="optional"
+    versionRange="${ae2_version_range}"
+    ordering="NONE"
+    side="SERVER"
+
+#[[dependencies.${mod_id}]]
+#    modId="enderio"
+#    type="optional"
+#    versionRange="${enderio_version_range}"
+#    ordering="NONE"
+#    side="SERVER"
+
 # Features are specific properties of the game environment, that you may want to declare you require. This example declares
 # that your mod requires GL version 3.2 or higher. Other features will be added. They are side aware so declaring this won't
 # stop your mod loading on the server for example.
