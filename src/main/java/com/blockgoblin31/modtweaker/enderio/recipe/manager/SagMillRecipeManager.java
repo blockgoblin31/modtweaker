@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 @ZenRegister
-@Document("mods/modtweaker/enderio/recipe/SagMill")
+@Document("mods/modtweaker/enderio/recipes/SagMill")
 @ZenCodeType.Name("mods.modtweaker.enderio.managers.SagMillRecipeManager")
 public class SagMillRecipeManager implements IRecipeManager<SagMillingRecipe> {
 

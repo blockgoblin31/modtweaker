@@ -18,7 +18,7 @@ import org.openzen.zencode.java.ZenCodeType;
 import java.util.ArrayList;
 
 @ZenRegister
-@Document("mods/modtweaker/enderio/recipe/AlloySmelter")
+@Document("mods/modtweaker/enderio/recipes/AlloySmelter")
 @ZenCodeType.Name("mods.modtweaker.enderio.recipe.manager.AlloySmelterRecipeManager")
 public class AlloySmelterRecipeManager implements IRecipeManager<AlloySmeltingRecipe> {
     */

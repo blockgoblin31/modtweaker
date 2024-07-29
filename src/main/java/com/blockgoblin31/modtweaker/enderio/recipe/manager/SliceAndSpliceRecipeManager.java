@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 @ZenRegister
-@Document("mods/modtweaker/enderio/recipe/SliceAndSpliceRecipeManager")
+@Document("mods/modtweaker/enderio/recipes/SliceAndSpliceRecipeManager")
 @ZenCodeType.Name("mods.modtweaker.enderio.recipe.manager.SliceAndSpliceRecipeManager")
 public class SliceAndSpliceRecipeManager implements IRecipeManager<SlicingRecipe> {
 
