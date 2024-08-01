@@ -10,6 +10,7 @@ import com.blamejared.crafttweaker.api.item.IItemStack;
 import com.blamejared.crafttweaker.api.recipe.manager.base.IRecipeManager;
 import com.blamejared.crafttweaker.api.tag.type.KnownTag;
 import com.blamejared.crafttweaker_annotations.annotations.Document;
+import com.blockgoblin31.modtweaker.helper.NonNullListHelper;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -19,6 +20,8 @@ import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.material.Fluid;
 import org.openzen.zencode.java.ZenCodeType;
+
+import java.util.Arrays;
 
 @ZenRegister
 @Document("mods/modtweaker/ae2/recipes/In World Transformation")
@@ -41,7 +44,7 @@ public class TransformRecipeManager implements IRecipeManager<TransformRecipe> {
     @ZenCodeType.Method
     public void addExplosionTransformRecipe(String name, IItemStack output, IIngredient[] inputs) {
         ResourceLocation location = ResourceLocation.parse("crafttweaker:"+name);
-        NonNullList<Ingredient> ingredients = convert(inputs);
+        NonNullList<Ingredient> ingredients = NonNullListHelper.convert(Arrays.stream(inputs).map(IIngredient::asVanillaIngredient).toArray(Ingredient[]::new));
         TransformRecipe recipe = new TransformRecipe(ingredients, output.getImmutableInternal(), TransformCircumstance.EXPLOSION);
         RecipeHolder<TransformRecipe> holder = new RecipeHolder<>(location, recipe);
         CraftTweakerAPI.apply(new ActionAddRecipe<>(this, holder, "explosion"));
@@ -61,17 +64,9 @@ public class TransformRecipeManager implements IRecipeManager<TransformRecipe> {
     @ZenCodeType.Method
     public void addFluidTransformRecipe(String name, IItemStack output, IIngredient[] inputs, KnownTag<Fluid> fluid) {
         ResourceLocation location = ResourceLocation.parse("crafttweaker:"+name);
-        NonNullList<Ingredient> ingredients = convert(inputs);
+        NonNullList<Ingredient> ingredients = NonNullListHelper.convert(Arrays.stream(inputs).map(IIngredient::asVanillaIngredient).toArray(Ingredient[]::new));;
         TransformRecipe recipe = new TransformRecipe(ingredients, output.getImmutableInternal(), TransformCircumstance.fluid(TagKey.create(Registries.FLUID, fluid.id())));
         RecipeHolder<TransformRecipe> holder = new RecipeHolder<>(location, recipe);
         CraftTweakerAPI.apply(new ActionAddRecipe<>(this, holder, "fluid"));
-    }
-
-    private NonNullList<Ingredient> convert(IIngredient[] inputs) {
-        NonNullList<Ingredient> ingredients = NonNullList.create();
-        for (IIngredient input : inputs) {
-            ingredients.add(input.asVanillaIngredient());
-        }
-        return ingredients;
     }
 }
