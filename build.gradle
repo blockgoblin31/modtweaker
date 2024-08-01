@@ -41,6 +41,13 @@ repositories {
     maven {
         url "https://maven.shedaniel.me"
     }
+
+    maven {
+        url "https://dl.cloudsmith.io/public/klikli-dev/mods/maven/"
+        //content {
+        //    includeGroup "com.klikli_dev"
+        //}
+    }
 }
 
 base {
@@ -123,6 +130,7 @@ dependencies {
     localRuntime "dev.architectury:architectury-neoforge:${architectury_version}"
     //compileOnly "com.enderio:EnderIO:${enderio_version}:api"
     //localRuntime "com.enderio:EnderIO:${enderio_version}"
+    compileOnly "com.klikli_dev:occultism-${minecraft_version}-neoforge:${occultism_version}"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
@@ -146,6 +154,7 @@ tasks.withType(ProcessResources).configureEach {
             crafttweaker_version_range: crafttweaker_version_range,
             ex_nihilo_version_range   : ex_nihilo_version_range,
             enderio_version_range     : enderio_version_range,
+            occultism_version_range   : occultism_version_range,
     ]
     inputs.properties replaceProperties
 
@@ -177,6 +186,12 @@ idea {
     module {
         downloadSources = true
         downloadJavadoc = true
+    }
+}
+
+minecraft {
+    accessTransformers {
+        file('src/main/resources/META-INF/accesstransformer.cfg')
     }
 }
 
