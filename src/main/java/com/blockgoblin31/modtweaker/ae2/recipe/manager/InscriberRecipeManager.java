@@ -14,7 +14,7 @@ import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeType;
 import org.openzen.zencode.java.ZenCodeType;
 
-@ZenRegister
+@ZenRegister(modDeps = "ae2")
 @Document("mods/modtweaker/ae2/recipes/Inscriber")
 @ZenCodeType.Name("mods.modtweaker.ae2.recipe.manager.InscriberRecipeManager")
 public class InscriberRecipeManager implements IRecipeManager<InscriberRecipe> {

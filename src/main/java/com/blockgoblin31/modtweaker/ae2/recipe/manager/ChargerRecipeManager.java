@@ -13,7 +13,7 @@ import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeType;
 import org.openzen.zencode.java.ZenCodeType;
 
-@ZenRegister
+@ZenRegister(modDeps = {"ae2"})
 @Document("mods/modtweaker/ae2/recipes/Charger")
 @ZenCodeType.Name("mods.modtweaker.ae2.recipe.manager.ChargerRecipeManager")
 public class ChargerRecipeManager implements IRecipeManager<ChargerRecipe> {

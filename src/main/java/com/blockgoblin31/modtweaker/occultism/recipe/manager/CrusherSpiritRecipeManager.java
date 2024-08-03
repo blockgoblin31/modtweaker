@@ -16,7 +16,7 @@ import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeType;
 import org.openzen.zencode.java.ZenCodeType;
 
-@ZenRegister
+@ZenRegister(modDeps = {"occultism"})
 @Document("mods/modtweaker/occultism/recipes/Crushing")
 @ZenCodeType.Name("mods.modtweaker.occultism.recipes.managers.CrusherSpiritRecipeManager")
 public class CrusherSpiritRecipeManager implements IRecipeManager<CrushingRecipe> {

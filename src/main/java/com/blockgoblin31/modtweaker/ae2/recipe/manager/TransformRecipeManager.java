@@ -23,7 +23,7 @@ import org.openzen.zencode.java.ZenCodeType;
 
 import java.util.Arrays;
 
-@ZenRegister
+@ZenRegister(modDeps = {"ae2"})
 @Document("mods/modtweaker/ae2/recipes/In World Transformation")
 @ZenCodeType.Name("mods.modtweaker.ae2.recipe.manager.TransformRecipeManager")
 public class TransformRecipeManager implements IRecipeManager<TransformRecipe> {
