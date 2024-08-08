@@ -38,6 +38,7 @@ public class RitualRecipeBuilder {
     final NonNullList<Ingredient> ingredients;
     final RitualRecipeManager manager;
     EntityType<Entity> entityToSummon;
+    TagKey<EntityType<?>> entityToSummonTag;
     CompoundTag entityNbt;
     int duration = 30;
     int spiritMaxAge = -1;
@@ -61,6 +62,15 @@ public class RitualRecipeBuilder {
     @ZenCodeType.Method
     public void setSummonEntity(EntityType<Entity> entityToSummon, @ZenCodeType.OptionalInt(1) int amountToSummon, @ZenCodeType.Optional CompoundTag nbt) {
         this.entityToSummon = entityToSummon;
+        entityToSummonTag = null;
+        summonNumber = amountToSummon;
+        entityNbt = nbt;
+    }
+
+    @ZenCodeType.Method
+    public void setSummonEntity(KnownTag<EntityType<?>> entityToSummon, @ZenCodeType.OptionalInt(1) int amountToSummon, @ZenCodeType.Optional CompoundTag nbt) {
+        this.entityToSummon = null;
+        entityToSummonTag = TagKey.create(Registries.ENTITY_TYPE, entityToSummon.id());
         summonNumber = amountToSummon;
         entityNbt = nbt;
     }
@@ -99,7 +109,7 @@ public class RitualRecipeBuilder {
     public void build(String name) {
         ResourceLocation location = ResourceLocation.parse("crafttweaker:"+name);
         RitualRecipe recipe = new RitualRecipe(pentacleId, ritualType, ritualDummy.getInternal(), resultItem.getInternal(), entityToSummon,
-                entityNbt, activationItem.asVanillaIngredient(), ingredients, duration, spiritMaxAge, summonNumber, spiritJobType,
+                entityToSummonTag, entityNbt, activationItem.asVanillaIngredient(), ingredients, duration, spiritMaxAge, summonNumber, spiritJobType,
                 new RitualRecipe.EntityToSacrifice(entityToSacrifice, entityToSacrificeDisplayName), itemToUse.asVanillaIngredient(), command);
         RecipeHolder<RitualRecipe> holder = new RecipeHolder<>(location, recipe);
         CraftTweakerAPI.apply(new ActionAddRecipe<>(manager, holder));
