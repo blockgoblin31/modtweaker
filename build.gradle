@@ -44,9 +44,48 @@ repositories {
 
     maven {
         url "https://dl.cloudsmith.io/public/klikli-dev/mods/maven/"
-        //content {
-        //    includeGroup "com.klikli_dev"
-        //}
+        content {
+            includeGroup "com.klikli_dev"
+        }
+    }
+    maven {
+        name = 'GeckoLib'
+        url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+        content {
+            includeGroup("software.bernie.geckolib")
+        }
+    }
+    maven {
+        name = "OctoStudios (Curios Api Contiunation)"
+        url = uri("https://maven.octo-studios.com/releases")
+        content {
+            includeGroup "top.theillusivec4.curios"
+        }
+    }
+    maven {
+        name = "SmartBrainLib (SBL) Maven Repo"
+        url = "https://dl.cloudsmith.io/public/tslat/sbl/maven/"
+    }
+    maven {
+        name 'LDTTeam - Modding - PerViamInvenire (MineColonies)'
+        url 'https://ldtteam.jfrog.io/ldtteam/modding/'
+        content {
+            includeGroup "com.ldtteam"
+        }
+    }
+    maven {
+        name = "TerraformersMC (emi)"
+        url = "https://maven.terraformersmc.com/"
+        content {
+            includeGroup "dev.emi"
+        }
+    }
+    maven {
+        name = "Modrinth"
+        url = "https://api.modrinth.com/maven"
+        content {
+            includeGroup "maven.modrinth"
+        }
     }
 }
 
@@ -126,8 +165,8 @@ dependencies {
     //localRuntime "novamachina.exnihilosequentia:exnihilosequentia:${ex_nihilo_version}"
     //localRuntime "novamachina.novacore:novacore:${novacore_version}"
     //compileOnly "me.shedaniel:RoughlyEnoughItems-neoforge:${rei_version}"
-    localRuntime "me.shedaniel:RoughlyEnoughItems-neoforge:${rei_version}"
-    localRuntime "dev.architectury:architectury-neoforge:${architectury_version}"
+    //localRuntime "me.shedaniel:RoughlyEnoughItems-neoforge:${rei_version}"
+    //localRuntime "dev.architectury:architectury-neoforge:${architectury_version}"
     //compileOnly "com.enderio:EnderIO:${enderio_version}:api"
     //localRuntime "com.enderio:EnderIO:${enderio_version}"
     compileOnly "com.klikli_dev:occultism-${minecraft_version}-neoforge:${occultism_version}"
