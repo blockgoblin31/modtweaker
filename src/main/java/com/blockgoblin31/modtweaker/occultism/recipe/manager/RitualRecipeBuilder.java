@@ -44,8 +44,8 @@ public class RitualRecipeBuilder {
     int spiritMaxAge = -1;
     int summonNumber = 1;
     ResourceLocation spiritJobType;
-    TagKey<EntityType<?>> entityToSacrifice;
-    String entityToSacrificeDisplayName;
+    RitualRecipe.EntityToSacrifice entityToSacrifice;
+    String entityToSacrificeDisplayName = "";
     IIngredient itemToUse = BracketHandlers.getItem("minecraft:air");
     String command;
 
@@ -87,11 +87,14 @@ public class RitualRecipeBuilder {
 
     @ZenCodeType.Method
     public void setEntityToSacrifice(KnownTag<EntityType<Entity>> entityToSacrifice) {
-        this.entityToSacrifice = TagKey.create(Registries.ENTITY_TYPE, entityToSacrifice.id());
+        this.entityToSacrifice = new RitualRecipe.EntityToSacrifice(TagKey.create(Registries.ENTITY_TYPE, entityToSacrifice.id()), entityToSacrificeDisplayName);
     }
 
     @ZenCodeType.Method
     public void setEntityToSacrificeName(String displayName) {
+        if (this.entityToSacrifice != null) {
+            this.entityToSacrifice = new RitualRecipe.EntityToSacrifice(entityToSacrifice.tag(), displayName);
+        }
         this.entityToSacrificeDisplayName = displayName;
     }
 
@@ -109,8 +112,8 @@ public class RitualRecipeBuilder {
     public void build(String name) {
         ResourceLocation location = ResourceLocation.parse("crafttweaker:"+name);
         RitualRecipe recipe = new RitualRecipe(pentacleId, ritualType, ritualDummy.getInternal(), resultItem.getInternal(), entityToSummon,
-                entityToSummonTag, entityNbt, activationItem.asVanillaIngredient(), ingredients, duration, spiritMaxAge, summonNumber, spiritJobType,
-                new RitualRecipe.EntityToSacrifice(entityToSacrifice, entityToSacrificeDisplayName), itemToUse.asVanillaIngredient(), command);
+                entityToSummonTag, entityNbt, activationItem.asVanillaIngredient(), ingredients, duration, spiritMaxAge, summonNumber,
+                spiritJobType, entityToSacrifice, itemToUse.asVanillaIngredient(), command);
         RecipeHolder<RitualRecipe> holder = new RecipeHolder<>(location, recipe);
         CraftTweakerAPI.apply(new ActionAddRecipe<>(manager, holder));
     }
