@@ -170,7 +170,7 @@ dependencies {
     //compileOnly "com.enderio:EnderIO:${enderio_version}:api"
     //localRuntime "com.enderio:EnderIO:${enderio_version}"
     compileOnly "com.klikli_dev:occultism-${minecraft_version}-neoforge:${occultism_version}"
-    //localRuntime "com.klikli_dev:occultism-${minecraft_version}-neoforge:${occultism_version}"
+    localRuntime "com.klikli_dev:occultism-${minecraft_version}-neoforge:${occultism_version}"
     compileOnly "com.klikli_dev:modonomicon-${minecraft_version}-neoforge:${modonomicon_version}"
 }
 
