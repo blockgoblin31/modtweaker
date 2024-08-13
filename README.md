@@ -1,5 +1,4 @@
-# Modtweaker
-(name is temporary)
+# CraftTweaker Integrations
 
 Adds explicit crafttweaker support to mods that dont have it
 Currently supported:
