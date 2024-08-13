@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "com.blockgoblin31.ct_integrations.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "refmap": "ct_integrations.mixins.refmap.json",
+  "mixins": [
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8.4"
+}
